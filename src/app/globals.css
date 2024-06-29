@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Custom keyframes for slide-in animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+
+@keyframes opFull {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opZero {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mycontainer {
+  max-width: 320px;
+}
+
+.navCon {
+  max-width: 320px;
+}
+
+@media only screen and (max-width: 690px) {
+  .mycontainer {
+    max-width: 320px;
+  }
+  .navCon {
+    max-width: 320px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 690px) {
+  .mycontainer {
+    max-width: 420px;
+  }
+  .navCon {
+    max-width: 420px;
+  }
+}
+
+@media only screen and (min-width: 690px) and (max-width: 999px) {
+  .mycontainer {
+    max-width: 600px;
+  }
+  .navCon {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .mycontainer {
+    max-width: 1080px;
+  }
+  .navCon {
+    max-width: 1200px;
+  }
+}
+
+/* Custom animation classes */
+.slide-in {
+  animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideOutToTop 0.5s ease-in forwards;
+}
+
+
+/* Custom animation classes */
+
+
+.gradient {
+  background-color: transparent;
+  background-image: linear-gradient(87deg, #84358E 40%, #473F89 100%);
+}
