@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: white;
+}
+
 /* Custom keyframes for slide-in animation */
 @keyframes slideInFromTop {
   0% {
@@ -86,7 +90,7 @@
     max-width: 1080px;
   }
   .navCon {
-    max-width: 1200px;
+    max-width: 500px;
   }
 }
 
@@ -107,3 +111,18 @@
   background-color: transparent;
   background-image: linear-gradient(87deg, #84358E 40%, #473F89 100%);
 }
+
+
+.line-under .pops{
+  width: 0;
+  height: 2px;
+  background-color: #593b8b;
+  transition: all 0.4s ease-in;
+}
+
+.line-under:hover .pops {
+  width: 100%;
+}
+
+
+

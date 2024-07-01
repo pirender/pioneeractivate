@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
 import Five from "@/components/sectionFive/Five";
@@ -20,6 +21,7 @@ export default function Home() {
       <Three />
       <Four />
       <Five />
+      <Footer />
     </main>
   );
 }

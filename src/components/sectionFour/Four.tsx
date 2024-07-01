@@ -48,7 +48,7 @@ const Four = () => {
 
   return (
     <div className="mt-14">
-      <div className="mycontainer my-0 mx-auto px-7 ">
+      <div className="mycontainer my-0 mx-auto px-5 ">
         <div className="flex flex-col lg:flex-row gap-6">
           {items.map((item, index) => (
             <div

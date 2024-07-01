@@ -8,7 +8,7 @@ import React from "react";
 const Three = () => {
   return (
     <div className="py-3">
-      <div className="mycontainer my-0 mx-auto px-7">
+      <div className="mycontainer my-0 mx-auto px-5">
         <div className="flex flex-col lg:flex-row-reverse lg:items-center">
           <div className="lg:flex-1 flex items-center justify-center">
             <img src="/three.png" alt="phone image" className="w-[600px]"/>
@@ -21,7 +21,7 @@ const Three = () => {
               draining your battery.
             </h4>
 
-            <button className="p-3 flex items-center gap-4 bg-[#783a8c] rounded-[4px] text-white w-[260px] justify-center lg:w-[300px]">
+            <button className="p-3 flex items-center gap-4 bg-[#783a8c] rounded-[4px] text-white  justify-center lg:w-[300px]">
               Learn The Tech Behind Pi
               <svg
                 xmlns="http://www.w3.org/2000/svg"
