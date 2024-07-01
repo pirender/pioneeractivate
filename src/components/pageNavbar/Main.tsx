@@ -24,7 +24,7 @@ const Main = () => {
           </div>
 
           <div className="mt-5 mb-6">
-            <h2 className="text-[#edb703] font-[500] text-[22.4px] leading-[32.4px] text-center">
+            <h2 className="text-[#edb703] font-[500] text-[17.4px] leading-[32.4px] text-center">
               Welcome to the Pi browser
             </h2>
           </div>

@@ -90,7 +90,7 @@ const Wallet = () => {
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className={`text-[13px] w-[55%] flex items-center justify-center border py-3 px-4 rounded-[40px] border-[#783a8c] text-[#783a8c] font-[600]`}
+                className={`text-[13px] flex items-center justify-center border py-3 px-4 rounded-[40px] border-[#783a8c] text-[#783a8c] font-[600] ${loading && 'w-[70%]'}`}
               >
                 {loading ? (
                   <span className="loading loading-spinner loading-sm"></span>
