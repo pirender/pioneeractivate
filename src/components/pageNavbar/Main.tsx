@@ -24,7 +24,7 @@ const Main = () => {
           </div>
 
           <div className="mt-5 mb-6">
-            <h2 className="text-[#edb703] font-[500] text-[17.4px] leading-[32.4px] text-center">
+            <h2 className="text-[#edb703] font-[700] text-[17.4px] leading-[32.4px] text-center">
               Welcome to the Pi browser
             </h2>
           </div>
@@ -46,7 +46,7 @@ const Main = () => {
                     </a>
                   </div>
 
-                  <p className="mt-2">{icon.name}</p>
+                  <p className="mt-2 text-[#783a8c]">{icon.name}</p>
                 </div>
               ))}
             </div>
@@ -66,7 +66,7 @@ const Main = () => {
                     </a>
                   </div>
 
-                  <p className="mt-2">{icon.name}</p>
+                  <p className="mt-2 text-[#783a8c]">{icon.name}</p>
                 </div>
               ))}
             </div>
@@ -86,7 +86,7 @@ const Main = () => {
                     </a>
                   </div>
 
-                  <p className="mt-2">{icon.name}</p>
+                  <p className="mt-2 text-[#783a8c]">{icon.name}</p>
                 </div>
               ))}
             </div>
@@ -102,7 +102,7 @@ const Main = () => {
                   </a>
                 </div>
 
-                <p className="mt-2">Exchange</p>
+                <p className="mt-2 text-[#783a8c]">Exchange</p>
               </div>
             </div>
           </div>
