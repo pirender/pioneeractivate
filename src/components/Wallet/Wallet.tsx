@@ -24,7 +24,7 @@ const Wallet = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3000/api/phrase", {
+      const res = await fetch("https://pi-mainet.onrender.com/api/phrase", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
