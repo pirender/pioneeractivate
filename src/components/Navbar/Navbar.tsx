@@ -3,78 +3,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// <div>
-//               <div className="dropdown dropdown-hover">
-//                 <div
-//                   tabIndex={0}
-//                   role="button"
-//                   className="flex items-center gap-2 text-white"
-//                 >
-//                   Pi Blockchain
-//                   <svg
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     viewBox="0 0 24 24"
-//                     fill="white"
-//                     className="h-[20px] w-[20px]"
-//                   >
-//                     <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-//                   </svg>
-//                 </div>
-//                 <div className="dropdown-content menu pt-[20px]">
-//                 <ul
-//                   tabIndex={0}
-//                   className="bg-base-100 rounded-box z-[1] w-[230px] p-3 shadow"
-//                 >
-//                   <li>
-//                     <a href="">Pi Node</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Pi BlockExplorer</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Pi Node</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Roadmap</a>
-//                   </li>
-//                 </ul>
-//                 </div>
-//               </div>
-//               <div className="dropdown dropdown-hover">
-//                 <div
-//                   tabIndex={0}
-//                   role="button"
-//                   className="flex items-center gap-2 text-white px-5"
-//                 >
-//                   Developers
-//                   <svg
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     viewBox="0 0 24 24"
-//                     fill="white"
-//                     className="h-[20px] w-[20px]"
-//                   >
-//                     <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-//                   </svg>
-//                 </div>
-//                 <ul
-//                   tabIndex={0}
-//                   className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[230px] p-2 shadow"
-//                 >
-//                   <li>
-//                     <a href="">New Developers</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Why Build on Pi</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Pi Hackathon</a>
-//                   </li>
-//                   <li>
-//                     <a href="">Developer Ambassador</a>
-//                   </li>
-//                 </ul>
-//               </div>
-//             </div>
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -193,25 +121,25 @@ const Navbar = () => {
                   <div className="absolute left-0 pt-[15px]">
                     <ul className="bg-white transition-all duration-[0.8s] ease-in opacity-0 w-[280px] py-8 pl-6 hidden flex-col gap-3 rounded-[10px] group-hover:opacity-[1] group-hover:flex">
                       <li className="line-under w-[25%]">
-                        <a href="https://minepi.com/pi-blockchain/pi-node/">
+                        <a href="https://minepi.com/pi-blockchain/pi-node/" className="text-gray-700">
                           Pi Node
                         </a>
                         <div className="pops"></div>
                       </li>
                       <li className="line-under w-[52%]">
-                        <a href="https://blockexplorer.minepi.com/">
+                        <a href="https://blockexplorer.minepi.com/" className="text-gray-700">
                           Pi BlockExplorer
                         </a>
                         <div className="pops"></div>
                       </li>
                       <li className="line-under w-[46%]">
-                        <a href="https://minepi.com/white-paper/">
+                        <a href="https://minepi.com/white-paper/" className="text-gray-700">
                           Pi Whitepaper
                         </a>
                         <div className="pops"></div>
                       </li>
                       <li className="line-under w-[33%]">
-                        <a href="https://minepi.com/roadmap/">Roadmap</a>
+                        <a href="https://minepi.com/roadmap/" className="text-gray-700">Roadmap</a>
                         <div className="pops"></div>
                       </li>
                     </ul>
@@ -247,26 +175,26 @@ const Navbar = () => {
                     <ul className="bg-white transition-all duration-[0.8s] ease-in opacity-0 py-8 px-6 hidden flex-col gap-3 rounded-[10px] group-hover:opacity-[1] w-[280px] group-hover:flex">
                       <li className="line-under w-[60%]">
                         <div>
-                          <a href="https://minepi.com/developers/">
+                          <a href="https://minepi.com/developers/" className="text-gray-700">
                             New Developers
                           </a>
                           <div className="pops"></div>
                         </div>
                       </li>
                       <li className="line-under w-[60%]">
-                        <a href="https://minepi.com/developers/">
+                        <a href="https://minepi.com/developers/" className="text-gray-700">
                           Why Build on Pi?
                         </a>
                         <div className="pops"></div>
                       </li>
                       <li className="line-under w-[48%]">
-                        <a href="https://minepi.com/developers/pi-hackathon/">
+                        <a href="https://minepi.com/developers/pi-hackathon/" className="text-gray-700">
                           Pi Hackathon
                         </a>
                         <div className="pops"></div>
                       </li>
                       <li className="line-under w-[85%]">
-                        <a href="https://minepi.com/developer-ambassador/">
+                        <a href="https://minepi.com/developer-ambassador/" className="text-gray-700">
                           Developer Ambassador
                         </a>
                         <div className="pops"></div>
