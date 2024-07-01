@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: white;
+html, body{
+  background-color: white !important;
 }
 
 /* Custom keyframes for slide-in animation */

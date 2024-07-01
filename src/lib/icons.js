@@ -1,16 +1,16 @@
 export const iconsOne = [
   {
-    name: 'chat',
+    name: 'Fireside',
     url: '/validate',
-    src: '/chat.jpg'
+    src: '/fireside.jpg'
   },
   {
-    name: 'wallet',
+    name: 'Wallet',
     url: '/wallet',
     src: '/wallet.jpg'
   },
   {
-    name: 'brainstorm',
+    name: 'Brainstorm',
     url: '/validate',
     src: '/brainstorm.jpg'
   },
@@ -19,17 +19,17 @@ export const iconsOne = [
 
 export const iconsTwo = [
   {
-    name: 'mine.pi',
+    name: 'Mine',
     url: '/validate',
     src: '/mine.jpg'
   },
   {
-    name: 'blockchain',
+    name: 'Blockchain',
     url: '/validate',
     src: '/blockchain.jpg'
   },
   {
-    name: 'develop',
+    name: 'Develop',
     url: '/validate',
     src: '/develop.jpg'
   },
@@ -37,18 +37,18 @@ export const iconsTwo = [
 
 export const iconsThree = [
   {
-    name: 'kyc',
+    name: 'KYC',
     url: '/validate',
     src: '/kyc.jpg'
   },
   {
-    name: 'fireside',
+    name: 'Chat',
     url: '/validate',
-    src: '/fireside.jpg'
+    src: '/chat.jpg'
   },
   {
-    name: 'exchange',
+    name: 'Profiles',
     url: '/validate',
-    src: '/p2p.jpg'
+    src: '/screen.jpeg'
   },
 ]

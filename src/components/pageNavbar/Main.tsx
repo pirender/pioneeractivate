@@ -23,7 +23,7 @@ const Main = () => {
             </svg>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 mb-6">
             <h2 className="text-[#edb703] font-[500] text-[22.4px] leading-[32.4px] text-center">
               Welcome to the Pi browser
             </h2>
@@ -32,10 +32,12 @@ const Main = () => {
           <div className="flex flex-col gap-14 p-6 lg:w-[400px] my-0 mx-auto">
             <div className="flex items-center justify-between">
               {iconsOne.map((icon, index) => (
-                <div key={index} className="w-[60px] h-[60px]">
+                <div
+                  key={index}
+                  className="w-[60px] h-[60px]  flex items-center justify-center flex-col"
+                >
                   <div className="w-[60px] h-[60px]">
                     <a href={icon.url}>
-                      
                       <img
                         src={icon.src}
                         alt="phone"
@@ -50,10 +52,12 @@ const Main = () => {
             </div>
             <div className="flex items-center justify-between">
               {iconsTwo.map((icon, index) => (
-                <div key={index} className="w-[60px] h-[60px]">
+                <div
+                  key={index}
+                  className="w-[60px] h-[60px] flex items-center justify-center flex-col"
+                >
                   <div className="w-[60px] h-[60px]">
                     <a href={icon.url}>
-                      
                       <img
                         src={icon.src}
                         alt="phone"
@@ -68,10 +72,12 @@ const Main = () => {
             </div>
             <div className="flex items-center justify-between">
               {iconsThree.map((icon, index) => (
-                <div key={index} className="w-[60px] h-[60px]">
+                <div
+                  key={index}
+                  className="w-[60px] h-[60px]  flex items-center justify-center flex-col"
+                >
                   <div className="w-[60px] h-[60px]">
                     <a href={icon.url}>
-                      
                       <img
                         src={icon.src}
                         alt="phone"
@@ -83,6 +89,21 @@ const Main = () => {
                   <p className="mt-2">{icon.name}</p>
                 </div>
               ))}
+            </div>
+            <div>
+              <div className="w-[60px] h-[60px]">
+                <div className="w-[60px] h-[60px]">
+                  <a href="/wallet">
+                    <img
+                      src="/p2p.jpg"
+                      alt="phone"
+                      className="h-full w-full object-contain"
+                    />
+                  </a>
+                </div>
+
+                <p className="mt-2">Exchange</p>
+              </div>
             </div>
           </div>
 
@@ -98,7 +119,6 @@ const Main = () => {
                   <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM16.5 7.5L14 14L7.5 16.5L10 10L16.5 7.5ZM12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"></path>
                 </svg>
                 Explore The Testnet Ecosystem
-               
               </button>
             </a>
           </div>

