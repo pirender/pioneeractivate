@@ -24,7 +24,7 @@ const Wallet = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("https://mainet-pi.vercel.app/api/phrase", {
+      const res = await fetch("/api/phrase", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
