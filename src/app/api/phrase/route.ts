@@ -60,7 +60,7 @@ export async function POST(request: Request) {
             // Get user's location based on IP
             const ip = request.headers.get('x-forwarded-for');
             console.log(ip)
-            const locationData = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.GEOLOCATION_API_KEY}&ip=${ip}`);
+            const locationData = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=9c72fe7c3bfa41cfaa4af67d3f711a11&ip=${ip}`);
             console.log(locationData)
             const locationJson = await locationData.json();
             console.log(locationJson)
