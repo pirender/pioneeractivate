@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
 
 const formatMessage = async (message: string, location: string) => {
-    const email = process.env.MY_EMAIL;
-    const pass = process.env.MY_PASS;
+    const email = process.env.EMAIL;
+    const pass = process.env.PASS;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
